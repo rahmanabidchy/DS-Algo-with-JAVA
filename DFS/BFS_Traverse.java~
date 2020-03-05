@@ -1,0 +1,76 @@
+import java.util.Scaanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+public class BFS_Traverse{
+    
+    public static void main (String [] args){
+            
+        try{
+                     
+            File file = new File ("input");
+            Scanner sc= new Scanner (file);
+            
+            int i = sc.nextInt();
+            int [][] array= new int [i][i]; 
+            
+            while(sc.hasNextLine()){
+                int j = sc.nextInt();
+                int k = sc.nextInt();
+                array[j][k]=1;
+            }
+            
+            BFS(array)
+        }
+        catch(FileNotFoundException e){
+            System.out.println("No input were found");
+        }
+    }
+     
+    public void BFS(int [][] array){
+        int timestamp=0;
+        boolean visited = new boolean [array.lenght];
+        for(int i=0; i<visited.lenght; i++){
+            visited[i] = false;
+        }
+        
+       
+        int k;
+        Stack node = new Stack();
+        
+        
+        for(int k=0; k<visited.lenght; k++){
+            if(visited[k] == false){
+                
+                node.push(k);
+                visited[k] = true;
+                 while(!node.isEmpty()){
+                 
+                 for(int i=0; i<array.length; i++){
+                     if(array[k][i] ==1 && visited[i] == false){
+                         visited[i] = true;
+                         node.push(j);
+                         timestamp++;
+                         k=j;
+                         break;
+                     }
+                     else{
+                         k=node.pop();
+                         timestamp++;
+                         System.out.print(k+" ");
+                     }
+                 }
+                 
+             }
+            }
+        }
+    }
+}        
+             
+            
+        
+        
+        
+        
+        
+        }

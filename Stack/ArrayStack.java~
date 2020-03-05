@@ -1,0 +1,36 @@
+public class ArrayStack implements Stack{
+    int size;
+    int top;
+    Object [] data;
+    
+    public ArrayStack(){
+        size=0;
+        top =-1;
+        data = new Object[5];
+    }
+    
+    public int size(){
+      return top+1;
+    }
+   
+    public boolean isEmpty(){
+      if(size==0){
+        return true;
+      }
+      else{
+        return false;
+      }
+    }
+    
+    public void push(Object e) throws StackOverflowException{
+        if(size==data.length){
+            throw new StackOverflowException;
+        }
+        else{
+            top+=1;
+            data[top]=e;
+        }
+    }
+    
+    
+}

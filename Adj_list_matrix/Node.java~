@@ -1,0 +1,9 @@
+public class Node{
+    int value;
+    Node next;
+    
+    public Node(int v, Node n){
+        v = this.value;
+        n = this.next;
+    }
+}
